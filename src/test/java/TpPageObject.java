@@ -23,8 +23,16 @@ public class TpPageObject {
 
   @Test
   public void testPO() {
+    final String keyword = "iPhone 13";
+
     HomePage homePage = new HomePage(driver);
     homePage.acceptCookie();
-
+    homePage.searchWithButton(keyword);
+    SearchResultPage searchResultPage = new SearchResultPage(driver);
+    searchResultPage.openSearchResult(0);
+    ProductPage productPage = new ProductPage(driver);
+    productPage.addToCart();
+    productPage.refuseAppleCare();
+    productPage.openCartPage();
   }
 }
