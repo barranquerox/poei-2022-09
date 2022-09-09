@@ -1,3 +1,5 @@
+import amazon.CartPage;
+import amazon.HomePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
