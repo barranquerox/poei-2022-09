@@ -16,20 +16,23 @@ public class ProductPage {
     this.driver = driver;
   }
 
-  public void addToCart() {
+  public ProductPage addToCart() {
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     WebElement ajouterAuPanierButton = wait.until(ExpectedConditions.visibilityOfElementLocated(addToCartButtonSelector));
     ajouterAuPanierButton.click();
     wait.until(ExpectedConditions.visibilityOfElementLocated(refuseAppleCareButtonSelector));
+    return this;
   }
 
-  public void refuseAppleCare() {
+  public ProductPage refuseAppleCare() {
     driver.findElement(refuseAppleCareButtonSelector).click();
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     wait.until(ExpectedConditions.visibilityOfElementLocated(openCartSelector));
+    return this;
   }
 
-  public void openCartPage() {
+  public CartPage openCartPage() {
     driver.findElement(openCartSelector).click();
+    return new CartPage(driver);
   }
 }

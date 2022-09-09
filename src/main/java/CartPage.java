@@ -7,4 +7,8 @@ public class CartPage {
   public CartPage(WebDriver driver) {
     this.driver = driver;
   }
+
+  public String getSubTotal() {
+    return "1000";
+  }
 }
