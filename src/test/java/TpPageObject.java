@@ -29,8 +29,10 @@ public class TpPageObject {
 
   @Test
   public void testPO() {
+    // arrange
     final String keyword = "iPhone 13";
 
+    // act
     HomePage homePage = new HomePage(driver);
     CartPage cartPage = homePage.acceptCookie()
         .searchWithButton(keyword)
@@ -39,6 +41,7 @@ public class TpPageObject {
         .refuseAppleCare()
         .openCartPage();
 
+    // assert
     Assert.assertEquals(cartPage.getSubTotal(), "1000");
   }
 
