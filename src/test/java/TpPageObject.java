@@ -48,7 +48,7 @@ public class TpPageObject {
 
     Actions actions = new Actions(driver);
     actions.moveToElement(loginButton);
-    actions.perform();  // tests
+    actions.perform();  // second test
 
     try {
       Thread.sleep(4000);
