@@ -28,7 +28,6 @@ public class TP1Test {
     driver.quit();
   }
 
-  @Test
   public void testAmazon() {
     WebElement searchBar = driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
     searchBar.sendKeys("Playstation 5");
@@ -40,7 +39,6 @@ public class TP1Test {
     }
   }
 
-  @Test
   public void testExplicitWait() {
 
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
@@ -66,7 +64,6 @@ public class TP1Test {
     panierButton.click();
   }
 
-  @Test
   public void testList() {
 
     driver.findElement(By.id("nav-hamburger-menu")).click();
@@ -84,7 +81,6 @@ public class TP1Test {
     }
   }
 
-  @Test
   public void testAsserts() {
     // Arrange
     final String expectedToutes = "Toutes";
