@@ -1,3 +1,5 @@
+import amazon.CartPage;
+import amazon.HomePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -27,8 +29,10 @@ public class TpPageObject {
 
   @Test
   public void testPO() {
+    // arrange
     final String keyword = "iPhone 13";
 
+    // act
     HomePage homePage = new HomePage(driver);
     CartPage cartPage = homePage.acceptCookie()
         .searchWithButton(keyword)
@@ -37,6 +41,7 @@ public class TpPageObject {
         .refuseAppleCare()
         .openCartPage();
 
+    // assert
     Assert.assertEquals(cartPage.getSubTotal(), "1000");
   }
 
